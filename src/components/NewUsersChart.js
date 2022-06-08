@@ -71,7 +71,7 @@ export default function NewUsersChart() {
       <div className="h-full">
         <canvas ref={ref}></canvas>
       </div>
-      <div className="text-left text-white">
+      <div className="mt-[45px] text-left text-white">
         <p className="text-base font-bold">New Users</p>
         <p className="text-sm">
           <span className="font-bold">(+23%)</span> than last week
