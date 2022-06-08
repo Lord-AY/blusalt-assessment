@@ -49,6 +49,8 @@ export default function UserFlowChart() {
     const myChart = new Chart(chart.getContext("2d"), {
       type: "line",
       options: {
+        maintainAspectRatio: false,
+        responsive: true,
         scales: {
           y: {
             grid: {
@@ -93,7 +95,7 @@ export default function UserFlowChart() {
   }, [state]);
 
   return (
-    <div className="flex h-60 flex-col rounded-[10px] bg-white p-5 shadow-custom md:h-auto">
+    <div className="flex h-72 xl:h-96 flex-col rounded-[10px] bg-white p-5 shadow-custom">
       <div className="flex justify-between">
         <div className="text-left">
           <p className="text-[18px] font-semibold text-[#171717]">
@@ -123,7 +125,9 @@ export default function UserFlowChart() {
         </div>
       </div>
       {/* <Line datasetIdKey="id" data={state} /> */}
-      <canvas style={{ height: "100px" }} ref={ref} id="chart"></canvas>
+      <div className="h-full">
+        <canvas ref={ref} id="chart"></canvas>
+      </div>
     </div>
   );
 }

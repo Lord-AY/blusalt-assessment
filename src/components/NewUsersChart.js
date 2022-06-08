@@ -28,7 +28,7 @@ export default function NewUsersChart() {
       data: state,
       options: {
         responsive: true,
-        // maintainAspectRatio: false,
+        maintainAspectRatio: false,
         barPercentage: 0.15,
         scales: {
           x: {
@@ -66,7 +66,7 @@ export default function NewUsersChart() {
   }, [state]);
 
   return (
-    <div className="flex h-auto flex-col rounded-[10px]  bg-customPurple-100 p-5 md:h-full">
+    <div className="flex h-72 xl:h-96 flex-col rounded-[10px]  bg-customPurple-100 p-5">
       {/* <Line datasetIdKey="id" data={state} /> */}
       <div className="h-full">
         <canvas ref={ref}></canvas>
