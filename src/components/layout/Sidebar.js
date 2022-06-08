@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { UseAppContext } from "../../App";
 import Links from "./Links";
 
 export default function Sidebar() {
   const [display, setDisplay] = UseAppContext();
+  const node = useRef();
 
   const close = () => {
     return setDisplay(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (node.current.contains(e.target)) {
+        return;
+      }
+      // outside click
+      setDisplay(false);
+    };
+    if (display) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [display, setDisplay]);
   return (
     <React.Fragment>
       <div
+        ref={node}
         className={`${
           display ? "translate-x-0" : "-translate-x-full"
         } fixed z-[100] flex h-screen w-full flex-col overflow-y-auto bg-customPurple-100 px-5 pt-[30px] pb-[60px] text-white transition-all duration-150 md:w-1/3 lg:w-64 lg:translate-x-0`}

@@ -12,7 +12,12 @@ export default function Links({ title, children }) {
   }, [title]);
 
   return (
-    <a ref={ref} href="#" className="group outline-none">
+    <a
+      ref={ref}
+      href="/"
+      onClick={(e) => e.preventDefault()}
+      className="group outline-none"
+    >
       <div className="mt-[26px] flex items-center justify-between rounded-[5px] border-r-white py-[9px] px-[8.5px] group-focus:border-r-[3px] group-focus:bg-white/10">
         <div className="flex">
           <div className="mr-[12.5px]">{children}</div>
