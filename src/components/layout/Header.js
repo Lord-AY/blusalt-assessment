@@ -52,7 +52,8 @@ export default function Header() {
         <div className="hidden h-10 w-10 items-center justify-center rounded-full bg-[#FAFAFA] lg:flex">
           <img src="/assets/icons/Switch.svg" alt="Switch" />
         </div>
-        <div className="hidden h-10 w-10 items-center justify-center rounded-full bg-[#FAFAFA] lg:flex">
+        <div className="relative hidden h-10 w-10 items-center justify-center rounded-full bg-[#FAFAFA] lg:flex">
+          <div className="bg-[#F26464] h-[9px] w-[9px] rounded-full absolute top-2 right-2.5"></div>
           <img src="/assets/icons/Notification.svg" alt="Notification" />
         </div>
         <div className="h-9 w-9 overflow-hidden rounded-full">
